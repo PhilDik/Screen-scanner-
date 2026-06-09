@@ -1,0 +1,16 @@
+Supplement: Algorithmic Depth Reconstruction From a Flat Screen Matrix
+
+A reversible smartphone screen does not directly receive a ready-made depth map. By itself, the screen surface receives only a two-dimensional optical map: the distribution of incoming light across the plane of the display. This map may include brightness, color, glare, gradients, reflections, temporal changes, and the response to known light patterns emitted by the screen itself.
+
+However, depth can still be reconstructed algorithmically. If the display alternates between emitting known optical patterns and sensing the resulting light response, the system can compare what was emitted with what returned to the surface. A neural network can then be trained on pairs of data: the flat optical response recorded by the screen and the real depth map of the scene in front of it.
+
+In this model, the screen does not behave like a classical camera or a direct time-of-flight sensor. Instead, it becomes a flat optical input surface for learned reconstruction. The neural network learns to infer probable depth from indirect cues: glare shape, brightness falloff, reflection deformation, color shifts, scattering, temporal delay, motion of the phone, and changes produced by different blinking patterns.
+
+The key limitation is ambiguity. A single static two-dimensional light map can correspond to many different three-dimensional scenes. Therefore, useful depth reconstruction requires additional information: multiple frames, controlled blinking patterns, different colors or frequencies, motion of the device, calibration data, and training on real depth measurements.
+
+In this sense, the screen-scanner does not “see depth” directly. It collects a flat light-field trace, and the algorithm reconstructs a probable volumetric interpretation from it. The more active modulation, temporal sampling, and movement are used, the less the system depends on guesswork and the closer it becomes to a real depth-scanning device.
+
+Short formula:
+
+The screen receives a 2D optical response.
+The algorithm reconstructs a probable 3D depth map.
